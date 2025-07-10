@@ -5,11 +5,21 @@
       <text class="title">{{ title }}</text>
     </view>
   </view>
+  <uni-badge text="1"></uni-badge>
+  <uni-badge text="2" type="success" @click="bindClick"></uni-badge>
+  <uni-badge text="3" type="primary" :inverted="true"></uni-badge>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
-const title = ref('Hello')
+const title = ref('欢迎来到小程序lalalala')
+
+const bindClick = () => {
+  uni.showToast({
+    title: '点击了',
+    icon: 'none'
+  })
+}
 </script>
 
 <style>

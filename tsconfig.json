@@ -7,7 +7,16 @@
       "@/*": ["./src/*"]
     },
     "lib": ["esnext", "dom"],
-    "types": ["@dcloudio/types"]
+    "types": [
+      "@dcloudio/types",
+      "@uni-helper/uni-app-types",
+      "@uni-helper/uni-ui-types",
+      "miniprogram-api-typings"
+    ],
+    "verbatimModuleSyntax": true
+  },
+  "vueCompilerOptions": {
+    "plugins": ["@uni-helper/uni-app-types/volar-plugin"]
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
 }
