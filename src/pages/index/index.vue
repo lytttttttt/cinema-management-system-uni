@@ -1,51 +1,26 @@
 <template>
-  <view class="content">
-    <image class="logo" src="/static/logo.png" />
-    <view class="text-area">
-      <text class="title">{{ title }}</text>
-    </view>
-  </view>
-  <button type="primary" @tap="bindClick">点击发送请求</button>
+  <swiper indicator-dots autoplay circular>
+    <swiper-item v-for="i in 3" :key="i">
+      <image :src="`/static/images/lun0${i}.jpg`" />
+    </swiper-item>
+  </swiper>
+  <!-- <button type="primary" @tap="bindClick">点击发送请求</button> -->
 </template>
 
 <script setup lang="ts">
-import { login } from '@/services/user'
-import { ref } from 'vue'
-const title = ref('欢迎来到小程序lalalala')
+// import { login } from "@/services/user";
+// import { ref } from "vue";
+// const title = ref("欢迎来到小程序lalalala");
 
-const bindClick = async () => {
-  const res = await login({
-    username: 'xzzz',
-    password: '1234',
-    roleId: 0,
-  })
-}
+// const bindClick = async () => {
+//   const res = await login({
+//     username: "xzzz",
+//     password: "1234",
+//     roleId: 0,
+//   });
+
+//   let data = res.data;
+// };
 </script>
 
-<style>
-.content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.logo {
-  height: 200rpx;
-  width: 200rpx;
-  margin-top: 200rpx;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 50rpx;
-}
-
-.text-area {
-  display: flex;
-  justify-content: center;
-}
-
-.title {
-  font-size: 36rpx;
-  color: #8f8f94;
-}
-</style>
+<style></style>
